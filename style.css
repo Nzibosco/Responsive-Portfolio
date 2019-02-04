@@ -217,8 +217,54 @@ body {
     background: #4aaaa5;
     border: 0 none;
   }
+
   /* Media queries begin */ 
 
-  /*Set the max width of the main body to 980px which is pretty standard on most desktop screes. */
+  /* media query for desktop browsers */ 
+
+  @media screen and (max-width: 980px){
+    nav {
+      width: 60%; /* to prevent the nav elements from cutting when browsers screens are modified to px below 980px */
+    }
+  }
+
+  /* for ipad screens of about 768px */
+
+  @media screen and (max-width: 768px){
+    #masthead {
+      position: static;
+    }
+    body {
+      background-image: unset;
+      background-color: gray;
+    }
+    #main-container {
+      padding-top: 20px;
+    }
+    nav {
+      width: 50%;
+    }
+  }
+/* Media querry for smaller devices */
+  /* make the header static */
   
-  @media screen 
+  @media screen and (max-width: 640px){
+    #masthead {
+      position: static;
+    }
+    /*reduce the padding px for the #main-container because the position is now static */
+    #main-container {
+      padding-top: 20px;
+    }
+    /* align center the nav */
+    nav {
+      width: 90%;
+    }
+    /* align center the logo */
+    #logo {
+      margin-left: 17%;
+    }
+    body {
+      background: url("assets/images/light_grey/light_grey_@2X.jpg")
+    }
+  }
